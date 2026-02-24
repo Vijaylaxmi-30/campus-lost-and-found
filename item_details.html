@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Details - Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="item-details">
+
+<nav class="navbar">
+    <a href="index.html">Lost Items</a>
+    <a href="found.html">Found Items</a>
+    <a href="report-lost.html">Report Lost</a>
+    <a href="report-found.html">Report Found</a>
+    <a href="about.html">About</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+<section class="detail-card">
+
+    <img src="shopping.webp" class="detail-img" id="detail-image" alt="Item image">
+
+    <h2 id="detail-name">Item Name</h2>
+    <p><strong>Description:</strong> <span id="detail-description"></span></p>
+    <p><strong>Date:</strong> <span id="detail-date"></span></p>
+    <p><strong>Location:</strong> <span id="detail-location"></span></p>
+    <p><strong>Category:</strong> <span id="detail-category"></span></p>
+
+    <button class="btn-large" id="detail-action">Update Status</button>
+    <p class="status-message" id="detail-status" role="status" aria-live="polite"></p>
+
+</section>
+
+<section class="suggestions-section">
+    <h3>Possible Matches</h3>
+    <p class="muted-text">Based on category and keywords.</p>
+    <div class="items-section" id="detail-suggestions"></div>
+    <p class="empty-state" id="detail-suggestions-empty" hidden>No suggestions yet.</p>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

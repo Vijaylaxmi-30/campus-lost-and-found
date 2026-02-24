@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Found Items - Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="found-list">
+
+<nav class="navbar">
+    <a href="index.html">Lost Items</a>
+    <a href="found.html">Found Items</a>
+    <a href="report-lost.html">Report Lost</a>
+    <a href="report-found.html">Report Found</a>
+    <a href="about.html">About</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+<header class="header">
+    <h1>Found Items</h1>
+    <p>Items turned in by students and staff</p>
+</header>
+
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stats-card">
+            <span class="stats-label">Total Found Items</span>
+            <span class="stats-value" id="found-total-count">0</span>
+        </div>
+        <div class="stats-card">
+            <span class="stats-label">Open Items</span>
+            <span class="stats-value" id="found-open-count">0</span>
+        </div>
+        <div class="stats-card">
+            <span class="stats-label">Resolved</span>
+            <span class="stats-value" id="found-resolved-count">0</span>
+        </div>
+    </div>
+</section>
+
+<section class="search-section">
+    <form id="found-search-form">
+        <input id="found-search-input" name="q" type="search" placeholder="Search found items...">
+        <select id="found-category-select" name="category">
+            <option value="all">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Books">Books</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Accessories">Accessories</option>
+            <option value="IDs">IDs</option>
+            <option value="Keys">Keys</option>
+        </select>
+        <label class="checkbox-toggle">
+            <input id="found-show-resolved" type="checkbox">
+            Show resolved
+        </label>
+        <select id="found-sort-select" name="sort">
+            <option value="newest">Sort: Newest</option>
+            <option value="oldest">Sort: Oldest</option>
+            <option value="name-az">Sort: Name A-Z</option>
+            <option value="name-za">Sort: Name Z-A</option>
+        </select>
+        <button class="btn" type="submit">Search</button>
+        <button class="btn-secondary" type="button" id="found-clear-filters">Clear</button>
+    </form>
+</section>
+
+<section class="items-section" id="found-items"></section>
+<p class="empty-state" id="found-empty" hidden>No found items yet.</p>
+
+<script src="app.js"></script>
+</body>
+</html>

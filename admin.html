@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+
+<nav class="navbar">
+    <a href="index.html">Lost Items</a>
+    <a href="found.html">Found Items</a>
+    <a href="report-lost.html">Report Lost</a>
+    <a href="report-found.html">Report Found</a>
+    <a href="about.html">About</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+<header class="header">
+    <h1>Admin Panel</h1>
+    <p>Manage reports and review match suggestions</p>
+</header>
+
+<section class="admin-section">
+    <div class="admin-login-card" id="admin-login-card">
+        <h2>Sign in</h2>
+        <p class="muted-text" id="admin-login-hint">Demo credentials: admin / admin123, staff / staff123</p>
+        <form id="admin-login-form" class="admin-form">
+            <label for="admin-username">Username</label>
+            <input id="admin-username" name="username" type="text" required>
+
+            <label for="admin-password">Password</label>
+            <input id="admin-password" name="password" type="password" required>
+
+            <button class="btn-large" type="submit">Sign in</button>
+            <p class="status-message" id="admin-login-status" role="status" aria-live="polite"></p>
+        </form>
+    </div>
+
+    <div class="admin-dashboard" id="admin-dashboard" hidden>
+        <div class="admin-header">
+            <div>
+                <h2>Welcome back</h2>
+                <p class="muted-text">Role: <span id="admin-role-label">Admin</span></p>
+            </div>
+            <button class="btn-secondary" type="button" id="admin-logout">Sign out</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stats-card">
+                <span class="stats-label">Total Reports</span>
+                <span class="stats-value" id="admin-total-count">0</span>
+            </div>
+            <div class="stats-card">
+                <span class="stats-label">Open Items</span>
+                <span class="stats-value" id="admin-open-count">0</span>
+            </div>
+            <div class="stats-card">
+                <span class="stats-label">Resolved</span>
+                <span class="stats-value" id="admin-resolved-count">0</span>
+            </div>
+        </div>
+
+        <div class="admin-grid">
+            <div class="admin-panel">
+                <h3>All Reports</h3>
+                <div class="admin-actions">
+                    <select id="admin-filter-type">
+                        <option value="all">All Types</option>
+                        <option value="lost">Lost</option>
+                        <option value="found">Found</option>
+                    </select>
+                    <select id="admin-filter-status">
+                        <option value="all">All Status</option>
+                        <option value="open">Open</option>
+                        <option value="resolved">Resolved</option>
+                    </select>
+                    <select id="admin-sort">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="name-az">Name A-Z</option>
+                        <option value="name-za">Name Z-A</option>
+                    </select>
+                </div>
+                <div class="admin-list" id="admin-report-list"></div>
+            </div>
+
+            <div class="admin-panel">
+                <h3>Match Suggestions</h3>
+                <p class="muted-text">Likely matches based on category and keywords.</p>
+                <div class="admin-list" id="admin-match-list"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
+

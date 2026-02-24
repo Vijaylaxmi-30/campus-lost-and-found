@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Lost Item - Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="report-lost">
+
+<nav class="navbar">
+    <a href="index.html">Lost Items</a>
+    <a href="found.html">Found Items</a>
+    <a href="report-lost.html">Report Lost</a>
+    <a href="report-found.html">Report Found</a>
+    <a href="about.html">About</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+<header class="header">
+    <h1>Report a Lost Item</h1>
+</header>
+
+<section class="form-section">
+
+<form class="form-card" id="report-lost-form">
+    <label for="lost-name">Item Name:</label>
+    <input id="lost-name" name="name" type="text" required>
+
+    <label for="lost-description">Description:</label>
+    <textarea id="lost-description" name="description" required></textarea>
+
+    <label for="lost-location">Last Seen Location:</label>
+    <input id="lost-location" name="location" type="text" required>
+
+    <label for="lost-date">Date Lost:</label>
+    <input id="lost-date" name="date" type="date" required>
+
+    <label for="lost-category">Category:</label>
+    <select id="lost-category" name="category" required>
+        <option value="" disabled selected>Select a category</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Books">Books</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Accessories">Accessories</option>
+        <option value="IDs">IDs</option>
+        <option value="Keys">Keys</option>
+    </select>
+
+    <label for="lost-image">Upload Image:</label>
+    <input id="lost-image" name="image" type="file" accept="image/*">
+
+    <button class="btn-large" type="submit">Submit Report</button>
+    <p class="status-message" id="lost-status" role="status" aria-live="polite"></p>
+</form>
+
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

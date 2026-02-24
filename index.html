@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Items - Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="lost-list">
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <a href="index.html">Lost Items</a>
+    <a href="found.html">Found Items</a>
+    <a href="report-lost.html">Report Lost</a>
+    <a href="report-found.html">Report Found</a>
+    <a href="about.html">About</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+<header class="header">
+    <img src="lost_LOGO.png" class="hogwarts-logo" alt="Campus Lost & Found logo">
+    <h1>Campus Lost & Found</h1>
+    <p>Track and recover lost items across campus</p>
+</header>
+
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stats-card">
+            <span class="stats-label">Total Lost Reports</span>
+            <span class="stats-value" id="lost-total-count">0</span>
+        </div>
+        <div class="stats-card">
+            <span class="stats-label">Open Cases</span>
+            <span class="stats-value" id="lost-open-count">0</span>
+        </div>
+        <div class="stats-card">
+            <span class="stats-label">Resolved</span>
+            <span class="stats-value" id="lost-resolved-count">0</span>
+        </div>
+    </div>
+</section>
+
+<section class="search-section">
+    <form id="search-form">
+        <input id="search-input" name="q" type="search" placeholder="Search lost items...">
+        <select id="category-select" name="category">
+            <option value="all">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Books">Books</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Accessories">Accessories</option>
+            <option value="IDs">IDs</option>
+            <option value="Keys">Keys</option>
+        </select>
+        <label class="checkbox-toggle">
+            <input id="lost-show-resolved" type="checkbox">
+            Show resolved
+        </label>
+        <select id="lost-sort-select" name="sort">
+            <option value="newest">Sort: Newest</option>
+            <option value="oldest">Sort: Oldest</option>
+            <option value="name-az">Sort: Name A-Z</option>
+            <option value="name-za">Sort: Name Z-A</option>
+        </select>
+        <button class="btn" type="submit">Search</button>
+        <button class="btn-secondary" type="button" id="lost-clear-filters">Clear</button>
+    </form>
+</section>
+
+<section class="items-section" id="lost-items"></section>
+<p class="empty-state" id="lost-empty" hidden>No lost items match your search.</p>
+
+<script src="app.js"></script>
+</body>
+</html>
